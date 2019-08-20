@@ -1,7 +1,7 @@
 # DeeperSystem Test - Computer Vision
 
 Link Task can be found [here](https://gist.github.com/csaftoiu/9fccaf47fd8f96cd378afd8fdd0d63c1).
-Link to download the .zip file, which contains the rotated pictures, is also [here](...)
+Link to download the .zip file, which contains the rotated pictures, is also [here](https://drive.google.com/open?id=17tAfUnESu8d8LOOACZiNpVyO1kNxZH1z)
 
 ## Little Explanation
 
