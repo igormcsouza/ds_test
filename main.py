@@ -152,7 +152,7 @@ CSV = list()
 CSV.append(['fn', 'label'])
 from numpy import argmax
 for item in Ynew:
-    CSV.append([item, le.inverse_transform([argmax(Ynew[item])])[0]])
+    CSV.append([item, le.inverse_transform(Ynew[item])[0]])
 
 # Saving it on the CSV file.
 from pandas import DataFrame
