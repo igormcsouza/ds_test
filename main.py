@@ -79,6 +79,7 @@ save_dir = os.path.join(os.getcwd(), 'saved_models')
 model_name = 'keras_rotated_images.h5'
 
 # Starting the Model, using the Cifar10 model.
+# * If you desire to load the model instead. comment this piece o code from here
 model = Sequential()
 model.add(Conv2D(32, (3, 3), padding='same',
                  input_shape=Xtr.shape[1:]))
@@ -103,9 +104,11 @@ model.add(Dense(num_classes))
 model.add(Activation('softmax'))
 
 # initiate RMSprop optimizer
+# An evolution of RProp which helps with the gradient descent problem
 opt = keras.optimizers.rmsprop(lr=0.0001, decay=1e-6)
 
 # Let's train the model using RMSprop
+# Using categorical_crossentropy for multi-class classification
 model.compile(loss='categorical_crossentropy',
               optimizer=opt,
               metrics=['accuracy'])
@@ -127,8 +130,10 @@ if not os.path.isdir(save_dir):
 model_path = os.path.join(save_dir, model_name)
 model.save(model_path)
 print('Saved trained model at %s ' % model_path)
+# * To here.
 
-# # Load Model
+# # Load Model, a model has been saved before.
+# # Uncomment this if you prefere load the model right away
 # from keras.models import load_model
 # model_path = os.path.join(save_dir, model_name)
 # model = load_model(model_path)
