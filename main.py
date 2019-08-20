@@ -1,4 +1,4 @@
-# Predicting Orientation from Images
+# Predicting Orientation of Images
 
 # Helper fuction to read the input (whether train or test)
 def reading_file_name(base_dir):
