@@ -10,3 +10,6 @@ Train the model took actually a lot of time, I adjusted the dropout parameter an
 
 ## Large Files?
 I created a folder name Large Files so I can put all the pictures and stop the git noise because of the large files. But, to run main.py, you will need to create this folder and put under it the 'test.rotfaces' and the 'train.rotfaces'. If that happens, everything should be fine!
+
+## How to run it?
+It's preatty easy. You just have to run the file 'main.py' and that's it! When you run it, it will build up all the network and train it all over again. The model has already been saved and you can uncomment the piece of code that loads the model and and comment the other piece which train the model, that will speed up things. Comments to guide this were introduce on the code.
