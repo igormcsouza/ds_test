@@ -2,3 +2,5 @@
 Large Files/
 __pycache__/
 .ipynb_checkpoints/
+rotated_test_images/
+rotated_images.zip

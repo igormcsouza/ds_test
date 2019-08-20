@@ -1,28 +1,17 @@
 from PIL import Image
-
-# Reading the inputs!
-def reading_file_name(base_dir):
-    from os import listdir
-    from os.path import isfile, join
-    onlyfiles = [f for f in listdir(base_dir) if isfile(join(base_dir, f))]
-    return onlyfiles
-
-test_files_name = reading_file_name('Large Files/test.rotfaces/test/')
-
 from pandas import read_csv
-labels = read_csv('Large Files/test.rotfaces/test/test.preds.csv')
+import os
 
-Ya = []
-for item in labels.label:
-    Ya.append(item)
+labels = read_csv('Large Files/test.rotfaces/test.preds.csv').values
 
-from os.path import join, isdir
-from os import getcwd, makedirs
+for item in labels:
+    colorImage  = Image.open(os.path.join('Large Files/test.rotfaces/test/', item[0]))
+    if item[1] == 'rotated_right':
+        rotated = colorImage.rotate(90)
+    if item[1] == 'rotated_left':
+        rotated = colorImage.rotate(-90)
+    if item[1] == 'upside_down':
+        rotated = colorImage.rotate(180)
+    rotated.save(os.path.join('rotated_test_images/', item[0]+'.png'))
 
-for item in test_files_name:
-    image  = Image.open(join('Large Files/test.rotfaces/test/' + item))
-
-save_dir = join(getcwd(), 'saved_models')
-
-if not isdir(save_dir):
-    makedirs(save_dir)
+print('Rotation complete')
