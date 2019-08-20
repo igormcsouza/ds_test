@@ -128,6 +128,11 @@ model_path = os.path.join(save_dir, model_name)
 model.save(model_path)
 print('Saved trained model at %s ' % model_path)
 
+# # Load Model
+# from keras.models import load_model
+# model_path = os.path.join(save_dir, model_name)
+# model = load_model(model_path)
+
 # Score trained model.
 scores = model.evaluate(Xte, Yte, verbose=1)
 print('Test loss:', scores[0])
